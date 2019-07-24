@@ -72,6 +72,25 @@ Intinya, _XPath_ menawarkan banyak metode alternatif untuk mencari suatu elemen 
 
 Materi mengenai _XPath_ sendiri sangat luas, sehingga kamu bisa baca mengenai CSS lebih lanjut [disini](https://www.w3schools.com/xml/xpath_intro.asp).
 
+## Perbandingan CSS vs xPath
+
+XPath | Css 
+--- | --- 
+//div/a | div > a
+//div//a | div a
+//div[@id='example'] | #example
+//div[@class='example'] | .example
+//input[@id='username']/following-sibling::input[1] | #username + input
+//input[@name='username'] | input[name='username']
+//input[@name='login'and @type='submit'] | input[name='login'][type='submit'] 
+a[contains(text(), 'Log out')] | a:contains('Log Out')
+- | #recordlist li:nth-of-type(4)
+- | #recordlist li:nth-child(4)
+- | #recordlist *:nth-child(4)
+- | a[id^='id_prefix_']
+- | a[id$='_id_sufix']
+- | a[id*='id_pattern']
+
 ## Implementasi Proyek
 Sekarang saya ingin memastikan apakah section Pencarian Populer ada pada halaman homepage Bukalapak. Kemudian saya menambahkan sebuah _step_ pada file Gherkin saya.
 
